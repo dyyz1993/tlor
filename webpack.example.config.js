@@ -5,8 +5,6 @@ const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-
-
 module.exports = {
   mode: "development",
   entry: {
@@ -25,6 +23,11 @@ module.exports = {
         use: [
           {
             loader: "babel-loader",
+            options: {
+              plugins: [
+                ["import", { libraryName: "antd-mobile", style: true }],
+              ],
+            },
           },
         ],
       },
@@ -39,11 +42,16 @@ module.exports = {
       // },
       {
         test: /\.css$/,
-        use: ["style-loader",{ loader: "css-loader" }],
+        use: ["style-loader", { loader: "css-loader" }],
       },
       {
         test: /\.scss$/,
         use: ["style-loader", "css-loader", "sass-loader"],
+      },
+      {
+        test: /\.less$/,
+        use: ["style-loader", "css-loader", { loader: "less-loader" }],
+        include: /node_modules/,
       },
       {
         test: /\.(png|jpg|gif|mp4|)$/,
@@ -57,11 +65,11 @@ module.exports = {
     ],
   },
   //映射工具
-  devtool: 'source-map',
+  devtool: "source-map",
   //处理路径解析
   resolve: {
     //extensions 拓展名
-    extensions: [".tsx", ".ts", ".js", ".jsx", ".json", ".scss"],
+    extensions: [".tsx", ".ts", ".js", ".jsx", ".json", ".scss", ".less"],
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -81,6 +89,7 @@ module.exports = {
       ENV: '"development"',
       VERSION: '"' + 1.1 + '"',
     }),
+
     // new webpack.ProvidePlugin({
     //     'window.System': 'System',
     // }),
@@ -90,6 +99,6 @@ module.exports = {
     open: true,
     publicPath: "/",
     hot: true,
-    liveReload: true
+    liveReload: true,
   },
 };

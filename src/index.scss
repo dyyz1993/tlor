@@ -1,16 +1,65 @@
-#tlor{
-    width: 10vw;
-    height: 10vw;
-    background-color: #bcf7e1;
-    border-radius: 10vw;
-    display: flex;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    text-align: center;
-    font-size: 2.5vw;
-    color: #f34f4f;
-    opacity: 0.5;
-    font-weight: bold;
-    // box-shadow: inset;
+#tlor {
+  width: 10vw;
+  height: 10vw;
+  background-color: #bcf7e1;
+  border-radius: 10vw;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 2.5vw;
+  color: #f34f4f;
+  opacity: 0.5;
+  font-weight: bold;
+  // box-shadow: inset;
+}
+.tlor-modal-wrap {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+}
+.tlor-modal {
+  width: 80vw;
+  .rmc-dialog {
+    &-close {
+      top: 1vw;
+      right: 1vw;
+    }
+    &-title {
+      font-size: 4vw;
+      text-align: center;
+    }
+    &-body {
+      padding: 10vw 8vw;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-content: center;
+      justify-content: center;
+      button {
+        margin-bottom: 5vw;
+        display: block;
+        outline: 0;
+        -webkit-appearance: none;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 0;
+        text-align: center;
+        font-size: 8vw;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-break: break-word;
+        white-space: nowrap;
+        color: #000;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+    }
+  }
 }

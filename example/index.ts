@@ -1,4 +1,4 @@
-// import Tlor from '../src/index';
-declare var Tlor: any
+import Tlor from '../src/index';
+// declare var Tlor: any
 
-(Tlor as any).default.init({ id: 1111 })
+(Tlor as any).init({ id: 1111 })
