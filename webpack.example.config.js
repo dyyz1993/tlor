@@ -42,15 +42,15 @@ module.exports = {
       // },
       {
         test: /\.css$/,
-        use: ["style-loader", { loader: "css-loader" }],
+        use: [{ loader: "css-loader" }],
       },
       {
         test: /\.scss$/,
-        use: ["style-loader", "css-loader", "sass-loader"],
+        use: ["css-loader", "sass-loader"],
       },
       {
         test: /\.less$/,
-        use: ["style-loader", "css-loader", { loader: "less-loader" }],
+        use: ["css-loader", { loader: "less-loader" }],
         include: /node_modules/,
       },
       {
