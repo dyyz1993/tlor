@@ -176,6 +176,8 @@ Tlor.init = function (config: ITlorProps) {
   };
 
   rrweb.record({
+    recordLog: true,
+    recordNetwork: true,
     emit(event, isCheckout) {
       // const eventsMatrix = eventsMatrixRef.current;
       // console.log("emit");

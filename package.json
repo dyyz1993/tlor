@@ -34,9 +34,11 @@
     "rrweb": "^0.9.14"
   },
   "devDependencies": {
+    "@babel/core": "^7.14.6",
     "@types/draggabilly": "^2.1.2",
     "@types/react": "^17.0.6",
     "@types/react-dom": "^17.0.5",
+    "babel-loader": "^8.2.2",
     "babel-plugin-import": "^1.13.3",
     "css-loader": "^5.2.5",
     "html-webpack-plugin": "^5.3.1",

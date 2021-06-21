@@ -110,35 +110,6 @@ module.exports = {
           },
         },
       },
-      {
-        test: /\.hbs$/,
-        use: [
-          {
-            loader: path.resolve(
-              __dirname,
-              "./loaders/handlebars-minifier-loader.js"
-            ),
-            options: {},
-          },
-          {
-            loader: nodeModDir + "handlebars-loader/index.js",
-            options: {
-              runtime:
-                path.resolve(__dirname, "./example/lib") + "/handlebars.js",
-              knownHelpers: ["class", "repeat", "concat"],
-              precompileOptions: {
-                knownHelpersOnly: true,
-              },
-            },
-          },
-          {
-            loader: "html-minifier-loader",
-            options: {
-              ignoreCustomFragments: [/\{\{\{[^}]+\}\}\}/, /\{\{[^}]+\}\}/],
-            },
-          },
-        ],
-      },
     ],
   },
   // optimization: {

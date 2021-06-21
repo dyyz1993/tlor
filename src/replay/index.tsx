@@ -33,8 +33,10 @@ function Tlor(props: IIprops) {
 }
 
 Tlor.init = (config: IIprops) => {
-  let container = document.body.appendChild(document.createElement("div"));
-  container.id = "tlor-replay";
+  if (!(config.el instanceof HTMLElement)) {
+    config.el = document.body.appendChild(document.createElement("div"));
+    config.el.id = "tlor-replay";
+  }
   const { id } = querystring.parse(location.search.replace("?", ""));
   if (!id) {
     return alert("query上缺少id");
@@ -44,8 +46,8 @@ Tlor.init = (config: IIprops) => {
     id,
   };
   ReactDOM.render(
-    <Tlor {...Object.assign({}, defaultConfig, config)} el={container}></Tlor>,
-    container
+    <Tlor {...Object.assign({}, defaultConfig, config)} el={config.el}></Tlor>,
+    config.el
   );
 };
 
